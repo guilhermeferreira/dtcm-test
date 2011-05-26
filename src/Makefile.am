@@ -1,4 +1,4 @@
-bin_PROGRAMS = exercicio1 exercicio2 exercicio3 exercicioII3
+bin_PROGRAMS = exercicio1 exercicio2 exercicio3 exercicio4 exercicioII3
 
 AM_CPPFLAGS = -Wall -Wextra -Wshadow -Wswitch-default -Wfloat-equal \
 -Wcast-qual -Wconversion -pedantic -ansi
@@ -6,4 +6,5 @@ AM_CPPFLAGS = -Wall -Wextra -Wshadow -Wswitch-default -Wfloat-equal \
 exercicio1_SOURCES = exercicio1.c
 exercicio2_SOURCES = exercicio2.c quicksort.h quicksort.c
 exercicio3_SOURCES = exercicio3.c statemachine.h statemachine_logic.c statemachine_table.c
+exercicio4_SOURCES = exercicio4.c
 exercicioII3_SOURCES = exercicioII3.c
