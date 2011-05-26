@@ -6,5 +6,5 @@ AM_CPPFLAGS = -Wall -Wextra -Wshadow -Wswitch-default -Wfloat-equal \
 exercicio1_SOURCES = exercicio1.c
 exercicio2_SOURCES = exercicio2.c quicksort.h quicksort.c
 exercicio3_SOURCES = exercicio3.c statemachine.h statemachine_logic.c statemachine_table.c
-exercicio4_SOURCES = exercicio4.c
+exercicio4_SOURCES = exercicio4.c linkedlist.c linkedlist.h
 exercicioII3_SOURCES = exercicioII3.c
