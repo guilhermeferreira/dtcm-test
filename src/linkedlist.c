@@ -134,7 +134,7 @@ void list_del( const NODE_T *element_to_del )
  * @brief Search in the list for the NODE_T passed by argument, and return a
  * copy of the found NODE_T, or NULL otherwise.
  */
-NODE_T *list_seach( const NODE_T *element_to_search )
+NODE_T *list_search( const NODE_T *element_to_search )
 {
     NODE_T *found_node;
     NODE_T *current_node;
