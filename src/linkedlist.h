@@ -7,7 +7,7 @@ typedef struct node
 {
     int indicator;
     char str[ STR_SIZE + 1 ];
-    struct node next;
+    struct node *next;
 } NODE_T;
 
 NODE_T *node_alloc( void );
