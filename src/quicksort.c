@@ -1,8 +1,8 @@
 /*
- * Modified version of Quicksort algorithm.
+ * Modified version of Quick-sort algorithm.
  * Reference from http://en.wikipedia.org
  */
-#include "quicksort.h"
+#include "sort.h"
 
 /*
  * @brief Swap the value of the two array items identified by the indexes.
@@ -59,7 +59,10 @@ static int inverse_partition(
     return store_index;
 }
 
-void inverse_quicksort(
+/*
+ * @brief Performs an inverse Quick-sort.
+ */
+void inverse_sort(
     int array[],
     int left_index,
     int right_index
@@ -73,7 +76,7 @@ void inverse_quicksort(
         pivot_index = inverse_partition(
             array, left_index, right_index, pivot_index
         );
-        inverse_quicksort( array, left_index, pivot_index - 1 );
-        inverse_quicksort( array, pivot_index + 1, right_index );
+        inverse_sort( array, left_index, pivot_index - 1 );
+        inverse_sort( array, pivot_index + 1, right_index );
     }
 }
