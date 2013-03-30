@@ -35,6 +35,26 @@ static void init_array(
 }
 
 /*
+ * @brief Prints the value of each array item.
+ */
+static void print_array(
+    const int array[],
+    const int array_count
+)
+{
+    int i;
+
+    assert( array != NULL );
+    assert( ( 0 < array_count ) && ( array_count < ARRAY_ITEMS_MAX_COUNT ) );
+
+    for ( i = 0; i < array_count; i++ ) {
+        printf( "%d ", array[ i ] );
+    }
+
+    printf( "\n" );
+}
+
+/*
  * @brief Load the library with the given sort algorithm.
  * @note Require a export LD_LIBRARY_PATH=./src/.libs/ to know where to find the libraries
  */
@@ -148,26 +168,6 @@ static void inverse_sort_array(
     (*func_ptr)( array, first_index, last_index );
 
     unload_sort_function();
-}
-
-/*
- * @brief Prints the value of each array item.
- */
-static void print_array(
-    const int array[],
-    const int array_count
-)
-{
-    int i;
-
-    assert( array != NULL );
-    assert( ( 0 < array_count ) && ( array_count < ARRAY_ITEMS_MAX_COUNT ) );
-
-    for ( i = 0; i < array_count; i++ ) {
-        printf( "%d ", array[ i ] );
-    }
-
-    printf( "\n" );
 }
 
 int main(int argc, char *argv[])
