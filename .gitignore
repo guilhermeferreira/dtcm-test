@@ -12,6 +12,7 @@
 .libs
 .deps
 
+compile
 configure
 depcomp
 install-sh

@@ -1,14 +1,16 @@
 #include <assert.h>
 #include <dlfcn.h>
 #include <stdio.h>
+#include <limits.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #include "sort.h"
 
-#define ARRAY_COUNT( a ) ( sizeof(a) / sizeof(a[0]) )
-#define ARRAY_MAX_ITEMS 32000
+#define ARRAY_COUNT( a )                     ( sizeof(a) / sizeof(a[0]) )
+#define ARRAY_ITEMS_MAX_COUNT                INT_MAX
+#define ARRAY_ITEMS_COUNT                    30
 
 typedef void (*sort_func_ptr_t)(int[], int, int);
 
@@ -25,7 +27,7 @@ static void init_array(
 {
     int i;
 
-    assert( ( 0 < array_count ) && ( array_count < ARRAY_MAX_ITEMS ) );
+    assert( ( 0 < array_count ) && ( array_count < ARRAY_ITEMS_MAX_COUNT ) );
 
     for ( i = 0; i < array_count; i++ ) {
         array[ i ] = i;
@@ -132,7 +134,7 @@ static void inverse_sort_array(
 
     assert( alg_name != NULL );
     assert( array != NULL );
-    assert( ( 0 < array_count ) && ( array_count < ARRAY_MAX_ITEMS ) );
+    assert( ( 0 < array_count ) && ( array_count < ARRAY_ITEMS_MAX_COUNT ) );
 
     first_index = 0;
     last_index = array_count - 1;
@@ -159,7 +161,7 @@ static void print_array(
     int i;
 
     assert( array != NULL );
-    assert( ( 0 < array_count ) && ( array_count < ARRAY_MAX_ITEMS ) );
+    assert( ( 0 < array_count ) && ( array_count < ARRAY_ITEMS_MAX_COUNT ) );
 
     for ( i = 0; i < array_count; i++ ) {
         printf( "%d ", array[ i ] );
@@ -171,7 +173,7 @@ static void print_array(
 int main(int argc, char *argv[])
 {
     char *alg_name = "quicksort";
-    int numbers[ 15 ];
+    int numbers[ ARRAY_ITEMS_COUNT ];
     int first_index;
     int last_index;
     int c;
