@@ -1,6 +1,6 @@
 /*
  * Modified version of Insertion-sort algorithm.
- * Reference from Intropduction to Algorithms, 3rd edition
+ * Reference from Introduction to Algorithms, 3rd edition
  */
 #include "sort.h"
 
